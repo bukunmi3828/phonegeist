@@ -23,7 +23,7 @@ if errorlevel 1 (
     if errorlevel 1 goto :failed
 )
 
-".venv\Scripts\python.exe" typer.py
+".venv\Scripts\python.exe" typer.py --choose-folder
 if errorlevel 1 goto :failed
 exit /b 0
 

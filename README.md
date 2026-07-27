@@ -7,6 +7,9 @@
 Phonegeist turns a phone into a text remote for a Windows PC. Start the app,
 scan the QR code shown in the terminal, paste text on the phone, and Phonegeist
 types it into the active field on the PC using normal Windows keyboard events.
+It can also transfer photos directly from the phone to the PC, and files from
+the PC to the phone, over the local network without uploading them to a cloud
+service.
 
 The phone does not need an app. Everything is hosted locally by the PC, and the
 text stays on the local network.
@@ -31,6 +34,16 @@ device's hotspot.
 5. Paste text on the phone and select the typing speed and start delay.
 6. Press **Send to laptop**, then click the destination field on the PC.
 
+When Phonegeist starts, choose the computer folder in which you want received
+photos to be saved. If the folder picker is cancelled, it uses
+`Downloads\Phonegeist`. On the phone, choose **Send photos to computer**,
+select one or more photos, and press **Transfer photos**. Each transfer can
+contain up to 100 photos and 2 GB.
+
+To send files from the computer to the phone, put the files in
+`Downloads\Phonegeist Share`, then open the phone page and use
+**Download from computer**. Press **Refresh files** after adding more files.
+
 Keep the terminal window open while using Phonegeist. Press `Ctrl+C` in that
 window to stop the server.
 
@@ -50,6 +63,9 @@ To use a different port or omit the QR code:
 ```powershell
 phonegeist --port 8080
 phonegeist --no-qr
+phonegeist --choose-folder
+phonegeist --receive-dir "D:\Phone photos"
+phonegeist --share-dir "D:\Files for my phone"
 ```
 
 For development, install the requirements and run the source file directly:
